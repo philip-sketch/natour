@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    // This is defines 1rem = 10px
+    font-size: 62.5%;
+
+    @include respond(tab_land) {
+        font-size: 56,25%;//1rem = 9px
+    }
+    
+    @include respond(tab_port) {
+        font-size: 50%;//1rem = 8px
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;//1rem = 12px
+    }
+}
+
+body {
+    padding: 30px;
+
+    @include respond(tab_port) {
+        padding: 0;
+    }
+}

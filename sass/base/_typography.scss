@@ -1,0 +1,85 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: $color-grey-dark;
+}
+
+.heading {
+    &-primary {
+        color: $color-white;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+
+        &--main {
+            display: block;
+            font-size: 60px;
+            font-weight: 400;
+            letter-spacing: 35px;
+
+            @include respond(phone) {
+                letter-spacing: 1rem;
+                font-size: 5rem;
+            }
+        
+            animation-name: moveInLeft ;
+            animation-duration: 1s ;
+            /* animation-iteration-count: 3; */
+            /* animation-delay: 3s ; */
+            animation-timing-function: ease-out;
+        }
+
+        &--sub {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 17.4px;
+            display: block;
+            animation: moveInRight 1s ease-out;
+
+            @include respond(phone) {
+                letter-spacing: 0;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &-secondary {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        display: inline-block;
+        -webkit-background-clip: text;
+        transition: all .2s;
+        letter-spacing: 2px;
+        color: transparent;
+
+        @include respond(tab_port) {
+            font-size: 2.5rem;
+        }
+
+        @include respond(phone) {
+            font-size: 2rem;
+        }
+
+        &:hover {
+            transform: skew(15deg ,2deg) scale(1.1);
+            text-shadow: .5rem 1rem 2rem rgba(0, 0, 0, .2);
+        }
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $default-font-size;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
